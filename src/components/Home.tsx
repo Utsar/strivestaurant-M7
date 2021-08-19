@@ -3,9 +3,15 @@ import dishes from '../data/menu.json'
 import { useState } from 'react'
 import DishComments from './DishComments'
 import upperName from '../helpers/lib'
+import AllDish from '../Types/AllDish'
 
-const Home = ({ title }) => {
-  const [selected, setSelected] = useState(null)
+interface HomeProps {
+  title: string
+ 
+}
+
+const Home = ({ title }:HomeProps) => {
+  const [selected, setSelected] = useState<AllDish | null>(null)
 
   return (
     <Container>
